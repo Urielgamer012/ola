@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito | VICKY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --rosa-oscuro: #d4838f; --rosa-suave: #fff0f2; --texto-oscuro: #2c2c2c; --blanco: #ffffff; --border-color: #eee; }
+        [data-theme="dark"] { --rosa-oscuro: #e09ba7; --rosa-suave: #1f1618; --texto-oscuro: #f3f3f3; --blanco: #121212; --border-color: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: 0.3s; }
+        body { font-family: 'Poppins', sans-serif; color: var(--texto-oscuro); background-color: var(--blanco); }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid var(--border-color); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--rosa-oscuro); text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 20px; align-items: center; }
+        nav ul li a { text-decoration: none; color: var(--texto-oscuro); font-size: 13px; text-transform: uppercase; }
+        .theme-toggle { background: none; border: 1px solid var(--rosa-oscuro); color: var(--rosa-oscuro); width: 32px; height: 32px; border-radius: 50%; cursor: pointer; }
+        
+        .container { padding: 50px 8%; max-width: 800px; margin: 0 auto; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 30px; text-align: center; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--border-color); }
+        .total { text-align: right; margin-top: 30px; font-size: 18px; font-weight: 500; }
+        .btn { background-color: var(--rosa-oscuro); color: white; border: none; padding: 10px 25px; border-radius: 20px; font-size: 12px; cursor: pointer; margin-top: 20px; display: inline-block; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="prueba.html" class="logo">VICKY</a>
+        <nav>
+            <ul>
+                <li><a href="prueba.html">Inicio</a></li>
+                <li><a href="pagina de productos.html">Productos</a></li>
+                <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Tu Carrito de Compras</h1>
+        <div class="cart-item">
+            <div>
+                <h3>Pulsera Moments Cierre Corazón</h3>
+                <p style="opacity:0.7; font-size:13px;">Cantidad: 1</p>
+            </div>
+            <p>$1,890 MXN</p>
+        </div>
+        <div class="total">Total: $1,890 MXN</div>
+        <div style="text-align: right;">
+            <button class="btn">Proceder al Pago Seguro</button>
+        </div>
+    </div>
+
+    <script>
+        const t = document.getElementById('themeToggle'), h = document.documentElement;
+        t.onclick = () => { h.toggleAttribute('data-theme'); t.textContent = h.hasAttribute('data-theme') ? '☀️' : '🌙'; }
+    </script>
+</body>
+</html>

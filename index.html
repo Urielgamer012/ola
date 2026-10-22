@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VICKY | Joyería y Bisutería</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        // Cargar el tema guardado antes de que cargue la página para evitar parpadeos
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+    <style>
+        :root {
+            --rosa-principal: #f8d7da; --rosa-oscuro: #d4838f; --rosa-suave: #fff0f2;
+            --texto-oscuro: #2c2c2c; --blanco: #ffffff; --bg-card: #ffffff; --border-color: #eee;
+            --footer-bg: #faf4f5; --footer-text: #888;
+        }
+        [data-theme="dark"] {
+            --rosa-principal: #4a2c30; --rosa-oscuro: #e09ba7; --rosa-suave: #1f1618;
+            --texto-oscuro: #f3f3f3; --blanco: #121212; --bg-card: #1a1a1a; --border-color: #333333;
+            --footer-bg: #161616; --footer-text: #aaa;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
+        body { font-family: 'Poppins', sans-serif; color: var(--texto-oscuro); background-color: var(--blanco); }
+        .security-bar { background-color: var(--rosa-oscuro); color: white; text-align: center; font-size: 11px; padding: 7px; }
+        .hero-section {
+            position: relative; width: 100%; height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex; flex-direction: column; justify-content: space-between; padding: 20px 5%;
+        }
+        header { display: flex; justify-content: space-between; align-items: center; width: 100%; z-index: 10; }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { color: #ffffff; text-decoration: none; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+        .nav-links a:hover { opacity: 0.7; }
+        .top-logo-icon { width: 40px; height: 40px; border: 1px solid rgba(255,255,255,0.6); transform: rotate(45deg); display: flex; align-items: center; justify-content: center; }
+        .top-logo-icon span { transform: rotate(-45deg); font-family: 'Playfair Display', serif; color: white; }
+        .nav-icons { display: flex; align-items: center; gap: 15px; font-size: 16px; }
+        .nav-icons a { color: white; text-decoration: none; }
+        .theme-toggle { background: none; border: 1px solid rgba(255,255,255,0.6); color: white; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+        .theme-toggle:hover { background-color: rgba(255,255,255,0.2); }
+        .hero-content { text-align: center; max-width: 800px; margin: 0 auto; z-index: 10; color: #ffffff; }
+        .brand-rombo { width: 60px; height: 60px; border: 1.5px solid rgba(255, 255, 255, 0.8); transform: rotate(45deg); margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.2); }
+        .brand-rombo span { transform: rotate(-45deg); font-family: 'Playfair Display', serif; font-size: 20px; }
+        .hero-content h2 { font-family: 'Playfair Display', serif; font-size: 24px; letter-spacing: 4px; margin-bottom: 2px; }
+        .hero-content p.subtitle-brand { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 25px; color: #e09ba7; }
+        .hero-content h3 { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; opacity: 0.9; }
+        .hero-content h1 { font-family: 'Playfair Display', serif; font-size: 40px; letter-spacing: 3px; font-weight: 700; margin-bottom: 20px; }
+        .btn { background-color: var(--rosa-oscuro); color: var(--blanco); padding: 10px 24px; border: none; border-radius: 25px; text-transform: uppercase; font-size: 11px; letter-spacing: 2px; cursor: pointer; text-decoration: none; display: inline-block; }
+        .btn:hover { opacity: 0.9; }
+        footer { background-color: var(--footer-bg); text-align: center; padding: 25px; font-size: 12px; color: var(--footer-text); border-top: 1px solid var(--border-color); }
+    </style>
+</head>
+<body>
+    <div class="security-bar">🔒 Conexión Segura SSL | Garantía y Autenticidad VICKY</div>
+
+    <section class="hero-section">
+        <header>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pagina de productos.html">Productos</a></li>
+            </ul>
+            <div class="top-logo-icon"><span>V</span></div>
+            <div class="nav-icons">
+                <a href="pagina de favoritos.html" title="Favoritos">♡</a>
+                <a href="Pagina de inicio de sesion.html" title="Mi Cuenta">👤</a>
+                <a href="pagina de carrito de compras.html" title="Carrito">🛍️</a>
+                <button class="theme-toggle" id="themeToggle" title="Cambiar Tema">🌙</button>
+            </div>
+        </header>
+
+        <div class="hero-content">
+            <div class="brand-rombo"><span>V</span></div>
+            <h2>VICKY</h2>
+            <p class="subtitle-brand">Joyería y Bisutería</p>
+            <h3>Tus joyas favoritas</h3>
+            <h1>TE ESPERAN</h1>
+            <a href="pagina de productos.html" class="btn">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 VICKY - Joyería y Bisutería. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        // Actualizar icono inicial según el tema cargado
+        if (htmlElement.getAttribute('data-theme') === 'dark') {
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (htmlElement.getAttribute('data-theme') === 'dark') {
+                htmlElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '🌙';
+            } else {
+                htmlElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | VICKY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --rosa-oscuro: #d4838f; --rosa-suave: #fff0f2; --texto-oscuro: #2c2c2c; --blanco: #ffffff; --border-color: #eee; }
+        [data-theme="dark"] { --rosa-oscuro: #e09ba7; --rosa-suave: #1f1618; --texto-oscuro: #f3f3f3; --blanco: #121212; --border-color: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: 0.3s; }
+        body { font-family: 'Poppins', sans-serif; color: var(--texto-oscuro); background-color: var(--blanco); display: flex; flex-direction: column; min-height: 100vh; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; border-bottom: 1px solid var(--border-color); }
+        .logo { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--rosa-oscuro); text-decoration: none; }
+        
+        .login-container { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+        .login-box { background: var(--rosa-suave); padding: 40px; border-radius: 12px; width: 100%; max-width: 400px; border: 1px solid var(--border-color); text-align: center; }
+        .login-box h1 { font-family: 'Playfair Display', serif; margin-bottom: 25px; font-size: 26px; }
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label { display: block; font-size: 12px; margin-bottom: 5px; opacity: 0.8; }
+        .input-group input { width: 100%; padding: 10px 15px; border: 1px solid var(--border-color); border-radius: 20px; background: var(--blanco); color: var(--texto-oscuro); outline: none; }
+        .btn { background-color: var(--rosa-oscuro); color: white; border: none; padding: 12px; width: 100%; border-radius: 20px; font-size: 12px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+        .theme-toggle { background: none; border: 1px solid var(--rosa-oscuro); color: var(--rosa-oscuro); width: 32px; height: 32px; border-radius: 50%; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="prueba.html" class="logo">VICKY</a>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+    </header>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Iniciar Sesión</h1>
+            <div class="input-group">
+                <label>Correo Electrónico</label>
+                <input type="email" placeholder="tucorreo@email.com">
+            </div>
+            <div class="input-group">
+                <label>Contraseña</label>
+                <input type="password" placeholder="••••••••">
+            </div>
+            <button class="btn">Entrar a mi Cuenta</button>
+        </div>
+    </div>
+
+    <script>
+        const t = document.getElementById('themeToggle'), h = document.documentElement;
+        t.onclick = () => { h.toggleAttribute('data-theme'); t.textContent = h.hasAttribute('data-theme') ? '☀️' : '🌙'; }
+    </script>
+</body>
+</html>
